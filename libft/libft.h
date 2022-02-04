@@ -6,7 +6,7 @@
 /*   By: vifontai <vifontai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 19:31:36 by vifontai          #+#    #+#             */
-/*   Updated: 2021/06/02 16:32:22 by vifontai         ###   ########.fr       */
+/*   Updated: 2022/02/03 19:10:48 by vifontai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int				ft_tolower(int c);
 int				ft_isprint(int c);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_atoi(const char *str);
+void			ft_swap(int *a, int *b);
 
 void			ft_bzero(void *s, size_t n);
 void			*ft_memset(void *dest, int c, size_t n);
@@ -60,17 +61,18 @@ char			*ft_strnew(size_t size);
 
 typedef struct s_list
 {
-	void			*content;
+	int				content;
 	struct s_list	*next;
 }				t_list;
 
-void			ft_lstclear(t_list **lst, void (*del)(void*));
+void			ft_lstclear(t_list **lst, void (*del)(int));
 void			*ft_lstlast(t_list *lst);
-void			ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstdelone(t_list *lst, void (*del)(int));
 int				ft_lstsize(t_list *lst);
-void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *t, void *(*f)(void *), void (*del)(void *));
+void			ft_lstiter(t_list *lst, void (*f)(int));
+t_list			*ft_lstnew(int content);
 void			ft_lstadd_back(t_list **alst, t_list *ne);
 void			ft_lstadd_front(t_list **alst, t_list *ne);
+
 
 #endif

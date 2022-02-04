@@ -6,13 +6,13 @@
 /*   By: vifontai <vifontai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/29 20:23:38 by vifontai          #+#    #+#             */
-/*   Updated: 2021/06/02 16:33:40 by vifontai         ###   ########.fr       */
+/*   Updated: 2022/02/03 16:16:51 by vifontai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*list;
 

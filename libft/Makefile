@@ -35,6 +35,7 @@ SRC = 	ft_split.c\
 		ft_strmapi.c\
 		ft_putnbr_fd.c\
 		ft_strnew.c\
+		ft_swap.c\
 
 OBJ = 	ft_split.o\
 		ft_strtrim.o\
@@ -71,6 +72,7 @@ OBJ = 	ft_split.o\
 		ft_itoa.o\
 		ft_putnbr_fd.o\
 		ft_strnew.o\
+		ft_swap.o\
 
 SRC_LIST = 	ft_split.c\
 		ft_strtrim.c\
@@ -108,7 +110,6 @@ SRC_LIST = 	ft_split.c\
 		ft_putnbr_fd.c\
 		ft_lstadd_back.c\
 		ft_lstsize.c\
-		ft_lstmap.c\
 		ft_lstlast.c\
 		ft_lstiter.c\
 		ft_lstdelone.c\
@@ -116,6 +117,7 @@ SRC_LIST = 	ft_split.c\
 		ft_lstadd_front.c\
 		ft_lstnew.c\
 		ft_strnew.c\
+		ft_swap.c\
 
 OBJ_LIST = 	ft_split.o\
 			ft_strtrim.o\
@@ -153,7 +155,6 @@ OBJ_LIST = 	ft_split.o\
 		ft_putnbr_fd.o\
 		ft_lstadd_back.o\
 		ft_lstsize.o\
-		ft_lstmap.o\
 		ft_lstlast.o\
 		ft_lstiter.o\
 		ft_lstdelone.o\
@@ -161,6 +162,7 @@ OBJ_LIST = 	ft_split.o\
 		ft_lstadd_front.o\
 		ft_lstnew.o\
 		ft_strnew.o\
+		ft_swap.o\
 
 CC = gcc
 

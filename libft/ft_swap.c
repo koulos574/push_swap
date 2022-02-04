@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vifontai <vifontai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/28 20:37:24 by vifontai          #+#    #+#             */
-/*   Updated: 2022/02/03 16:18:51 by vifontai         ###   ########.fr       */
+/*   Created: 2022/02/03 19:01:48 by vifontai          #+#    #+#             */
+/*   Updated: 2022/02/03 19:02:14 by vifontai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstiter(t_list *lst, void (*f)(int))
+void	ft_swap(int *a, int *b)
 {
-	while (lst)
-	{
-		(*f)(lst->content);
-		lst = lst->next;
-	}
+	int	tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
