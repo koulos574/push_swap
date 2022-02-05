@@ -6,7 +6,7 @@
 /*   By: vifontai <vifontai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:21:17 by vifontai          #+#    #+#             */
-/*   Updated: 2022/02/04 15:18:30 by vifontai         ###   ########.fr       */
+/*   Updated: 2022/02/05 19:27:51 by vifontai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,47 +34,67 @@ void    fill_args2(t_list **a, char **av)
 
 void    print(t_list *a, t_list *b)
 {
-    printf("a : ");
-    while (a != NULL)
+    static int check = 0;
+    if (check > 0)
+        printf("\n");
+    check++;
+    int i = 0;
+    int j = 0;
+    i = ft_lstsize(a);
+    j = ft_lstsize(b);
+    int size;
+    if (i < j)
+        size = j;
+    else
+        size = i;
+    int placeinlinkedlist = 0;
+    printf("a       b\n");
+    printf("------  ------\n");
+    while (size > 0)
     {
-        printf("%d ", a->content);
-        a = a->next;
+        if (a)
+            printf("%d", a->content);
+        if (b)
+        {
+            printf("        %d", b->content);
+            printf("        --> %d (place dans la liste i.e. 0 = a->content 1 = a->next->content)", placeinlinkedlist);
+        }
+        else
+            printf("                --> %d (place dans la liste i.e. 0 = a->content 1 = a->next->content)", placeinlinkedlist);
+        printf("\n");
+        if (a != NULL)
+            a = a->next;
+        if (b!= NULL)
+            b = b->next;
+        size--;
+        placeinlinkedlist++;
     }
-    printf("\n");
-    printf("b : ");
-    while (b != NULL)
-    {
-        printf("%d ", b->content);
-        b = b->next;
-    }
-    printf("\n");
+    printf("(top)   (top)\n");
 }
-void    sort_tree(t_list *a, t_list *b)
-{
-    int one;
-    int two;
-    int three;
 
-    one = a->content;
-    two = a->next->content;
-    three = a->next->next->content;
-    if (one > two && one > three && two < three)
-        sa(&a, 1);
-}
 int     main(int argc, char **argv)
 {
     t_list *a;
     t_list *b;
 
+    a = NULL;
+    b = NULL;
     /*
     ** ici je vais devoir faire tous mes checks pour voir si tout est bon
     */
     if (argc == 2)
     {
         fill_args2(&a, argv);
-        //fill_args(&b, argv);
+        //fill_args2(&b, argv);
     }
     print(a,b);
-    sort_tree(a, b);
+    is_sorted(a);
+    if (ft_lstsize(a) == 2)
+        sa(&a, 1);
+    else if (ft_lstsize(a) == 3)
+        sort_tree(&a);
+    else if (ft_lstsize(a) <= 5)
+        sort_five(&a, &b);
     print(a,b);
+    is_sorted(a);
 }
