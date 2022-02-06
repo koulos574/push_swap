@@ -6,7 +6,7 @@
 /*   By: vifontai <vifontai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:21:17 by vifontai          #+#    #+#             */
-/*   Updated: 2022/02/05 19:27:51 by vifontai         ###   ########.fr       */
+/*   Updated: 2022/02/06 22:28:07 by vifontai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,13 @@ int     main(int argc, char **argv)
         sort_tree(&a);
     else if (ft_lstsize(a) <= 5)
         sort_five(&a, &b);
+    else if (ft_lstsize(a) <= 100)
+    sort_hundred(&a, &b);
+    printf("end\n");
     print(a,b);
     is_sorted(a);
+    /*
+    ** faire gaffe parce que je pense que je vais etre oblige de mettre a la fin *stack_a = a mais du coup si je fais a = a->next; qll part toujours garder un head pour pouvoir avoir un point de depart
+    ** le vrai probleme c'est que tous les changements se font sur a et pas directement sur stack_a comme je pensais 
+    */
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   push_to_ab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vifontai <vifontai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/04 11:54:27 by vifontai          #+#    #+#             */
-/*   Updated: 2022/02/04 13:38:25 by vifontai         ###   ########.fr       */
+/*   Updated: 2022/02/06 21:11:56 by vifontai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void    pa(t_list **a, t_list **b)
     top_b = *b;
     before_last = *b;
     last_one = ft_lstsize(top_b);
-    if (ft_lstsize(top_b) == 0)
+    if (!*b)
         return ;
     while (top_b->next != NULL)
     {
@@ -43,9 +43,9 @@ void    pb(t_list **a, t_list **b)
 
     top_a = *a;
     before_last = *a;
-    last_one = ft_lstsize(top_a);
-    if (ft_lstsize(top_a) == 0)
+    if (!*a)
         return ;
+    last_one = ft_lstsize(top_a);
     while (top_a->next != NULL)
     {
         before_last = top_a;
