@@ -6,7 +6,7 @@
 /*   By: vifontai <vifontai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 19:21:17 by vifontai          #+#    #+#             */
-/*   Updated: 2022/02/06 22:28:07 by vifontai         ###   ########.fr       */
+/*   Updated: 2022/02/07 00:35:59 by vifontai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,11 @@ void    print(t_list *a, t_list *b)
     printf("(top)   (top)\n");
 }
 
+void test(t_list **a)
+{
+    (*a) = (*a)->next;  
+}
+
 int     main(int argc, char **argv)
 {
     t_list *a;
@@ -89,19 +94,25 @@ int     main(int argc, char **argv)
     }
     print(a,b);
     is_sorted(a);
-    if (ft_lstsize(a) == 2)
-        sa(&a, 1);
-    else if (ft_lstsize(a) == 3)
-        sort_tree(&a);
-    else if (ft_lstsize(a) <= 5)
-        sort_five(&a, &b);
-    else if (ft_lstsize(a) <= 100)
-    sort_hundred(&a, &b);
-    printf("end\n");
+    // if (ft_lstsize(a) == 2)
+    //     sa(&a, 1);
+    // else if (ft_lstsize(a) == 3)
+    //     sort_tree(&a);
+    // else if (ft_lstsize(a) <= 5)
+    //     sort_five(&a, &b);
+    // else if (ft_lstsize(a) <= 100)
+    // sort_hundred(&a, &b);
+    // printf("end\n");
+    test(&a);
     print(a,b);
     is_sorted(a);
+}
+
     /*
     ** faire gaffe parce que je pense que je vais etre oblige de mettre a la fin *stack_a = a mais du coup si je fais a = a->next; qll part toujours garder un head pour pouvoir avoir un point de depart
     ** le vrai probleme c'est que tous les changements se font sur a et pas directement sur stack_a comme je pensais 
+    ** a = *stack (la je lui donne les valeurs de stack donc c'est normal que quand il y a un changement rien ne passe sur stack
+    ** c'est pour ca que quand je passe dans un ra,rra, pa, etcc je donne l'adresse comme ca les modifs peuvent se faire
+    ** quand je me ballade dans les ra, rra etc, c'est en donnant les valeurs a d'autre variables mais toutes les operations ou je modifie reelement, je donne l'adresse d'ou c'est comme ca ca peut modifier reelement
+    ** a = *stack ca ne modifie rien parce que jamais je lui ai donne l'adresse de stack à a alors au dessus quand je me ballade a la fin je dis prend l'adresse du balladeur pour faire les modifs ce qui change tout
     */
-}
